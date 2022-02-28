@@ -41,7 +41,7 @@ public class CrudRepoTestRunner implements CommandLineRunner {
 			 dae.printStackTrace();
 		 }
 				/* try {
-				 System.out.println("Recods count ::"+service.getVaccinesCount());
+				 System.out.println("Records count ::"+service.getVaccinesCount());
 				 }
 				 catch(DataAccessException dae) {
 					 dae.printStackTrace();
@@ -53,7 +53,8 @@ public class CrudRepoTestRunner implements CommandLineRunner {
 					 catch(DataAccessException dae) {
 						 dae.printStackTrace();
 					 }*/
-				/*try {
+				
+		 /*try {
 				  System.out.println("==============findAll()=====================");
 				   Iterable<CoronaVaccine> itList=service.fetchAllDetails();
 						    itList.forEach(vaccine->{     //forEach with Lambda
@@ -73,6 +74,7 @@ public class CrudRepoTestRunner implements CommandLineRunner {
 				}*/
 		
 				/*System.out.println("============================================");
+				
 				try {
 					  System.out.println("==============findAllById(-)=====================");
 					   Iterable<CoronaVaccine> itList=service.fetchAllDetailsByIds(List.of(21L,23L,22L));
