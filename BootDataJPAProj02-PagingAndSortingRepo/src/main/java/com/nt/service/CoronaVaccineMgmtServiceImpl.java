@@ -34,6 +34,24 @@ public class CoronaVaccineMgmtServiceImpl implements ICoronaVaccineMgmtService {
 				                                                      props);
 		Page<CoronaVaccine> page = coronaRepo.findAll(pageable);
 		return page.getContent();
+	}
+
+	@Override
+	public void fetchDetailsbyPagination(int pageSize) {
+		// get total records count
+		long count = coronaRepo.count();
+		// decides the pagescount
+		long pagesCount = count/pageSize;
+		// if total 11 records and page size is 3 .then, 11/3 = 3.33 so u will get 3 * 3 == 9 records two are missed here
+		pagesCount = count%pageSize == 0?pagesCount:++pagesCount;
+		
+		for(int i=0;i<pagesCount;i++) {
+			Pageable pageable = PageRequest.of(i, pageSize);
+			Page<CoronaVaccine> page = coronaRepo.findAll(pageable);
+		    page.getContent().forEach(System.out::println);
+		    System.out.println("----------------"+(i+1)+"of"+page.getTotalPages() + "---------------------" );
+		    }
+		
 	}   
   
 }//class
