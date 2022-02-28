@@ -39,4 +39,5 @@ public class CoronaVaccine implements Serializable {
 	@NonNull
 	private   Integer requiredDoseCount;
 
-}
+} 
+ // class
