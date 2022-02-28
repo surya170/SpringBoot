@@ -17,4 +17,4 @@ public class BootDataJpaProj02PAndSRepoApplication {
 		SpringApplication.run(BootDataJpaProj02PAndSRepoApplication.class, args);
 			}
 
-}
+} // class
