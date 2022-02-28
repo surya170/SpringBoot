@@ -21,14 +21,23 @@ public class CrudRepoTestRunner implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		try {
+		/*try {
 			Iterable<CoronaVaccine> listEntities = service.fetchDetails(true, "price","name");
 			listEntities.forEach(System.out::println);
 		}
 		catch (DataAccessException dae) {
 			dae.printStackTrace();
 		}
-		
+		*/
+		try {
+			// Total 6 pages and page size is 2 so, 6/2 == 3 
+			// 3 pages are there , in that
+			// i asked 2nd page  details
+			service.fetchDetailsByPageNo(1, 2, true, "price").forEach(System.out::println);
+		} 
+		catch (DataAccessException dae) {
+			dae.printStackTrace();
+		}
 	}
 
 }
