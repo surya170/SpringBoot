@@ -23,6 +23,17 @@ public class CoronaVaccineMgmtServiceImpl implements ICoronaVaccineMgmtService {
 				  properties );
 		Iterable <CoronaVaccine>  listEntities = coronaRepo.findAll(sort );
 		return listEntities;
+	}
+
+	@Override
+	public Iterable<CoronaVaccine> fetchDetailsByPageNo(int pageNo, int pageSize, boolean asc, String... props) {
+		// create Pageable object having iinputs
+		Pageable pageable = PageRequest.of(pageNo,
+				                                                      pageSize, 
+				                                                      asc?Direction.ASC : Direction.DESC, 
+				                                                      props);
+		Page<CoronaVaccine> page = coronaRepo.findAll(pageable);
+		return page.getContent();
 	}   
   
 }//class
