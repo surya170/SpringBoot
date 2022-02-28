@@ -29,13 +29,20 @@ public class CrudRepoTestRunner implements CommandLineRunner {
 			dae.printStackTrace();
 		}
 		*/
-		try {
+		/*try {
 			// Total 6 pages and page size is 2 so, 6/2 == 3 
 			// 3 pages are there , in that
 			// i asked 2nd page  details
 			service.fetchDetailsByPageNo(1, 2, true, "price").forEach(System.out::println);
 		} 
 		catch (DataAccessException dae) {
+			dae.printStackTrace();
+		}*/
+		
+		try {
+			service.fetchDetailsbyPagination(2);
+		}
+		catch(DataAccessException dae) {
 			dae.printStackTrace();
 		}
 	}
