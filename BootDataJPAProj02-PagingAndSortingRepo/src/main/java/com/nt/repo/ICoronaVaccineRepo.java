@@ -7,3 +7,4 @@ import com.nt.entity.CoronaVaccine;
 public interface ICoronaVaccineRepo extends PagingAndSortingRepository<CoronaVaccine, Long> {
                  
 }
+// Interface closed.
