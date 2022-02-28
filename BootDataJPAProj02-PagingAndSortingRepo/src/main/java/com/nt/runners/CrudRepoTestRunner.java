@@ -22,9 +22,10 @@ public class CrudRepoTestRunner implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		try {
-			Iterable<CoronaVaccine> listEntities = service.fetchDetails(true, "price");
+			Iterable<CoronaVaccine> listEntities = service.fetchDetails(true, "price","name");
 			listEntities.forEach(System.out::println);
-		} catch (DataAccessException dae) {
+		}
+		catch (DataAccessException dae) {
 			dae.printStackTrace();
 		}
 		
