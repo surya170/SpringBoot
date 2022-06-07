@@ -1,2 +1,2 @@
-<%@ page isELIgnored="false" %>
-<jsp:forward page="welcome"/>
+<%@ page isELIgnored="false"%>
+<jsp:forward page="welcome" />
