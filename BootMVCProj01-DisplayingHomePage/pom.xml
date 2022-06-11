@@ -12,8 +12,8 @@
 	<groupId>surya</groupId>
 	<artifactId>BootMVCProj01-DisplayingHomePage</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
-	<name>BootMVCProj01-DisplayingHomePage</name>
+ 	<packaging>jar</packaging> 
+ 	<name>BootMVCProj01-DisplayingHomePage</name>
 	<description>SpringBoot MVC First Application</description>
 	<properties>
 		<java.version>1.8</java.version>
