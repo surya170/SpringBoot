@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-     <h1 style="color:red;text-align:center">From display1.jsp</h1>
+     <h1 style="color:red;text-align:center">Form display.jsp</h1>
 </body>
+
 </html>
