@@ -116,7 +116,8 @@ public class WishMessageGeneratorController {
 		PrintWriter pw = res.getWriter();
 		res.setContentType("text/html ");
 		pw.println("<b>Wish message is :: <b>"+result);
-		return null;
+		return null; 
 	}
+	
 	
 }
