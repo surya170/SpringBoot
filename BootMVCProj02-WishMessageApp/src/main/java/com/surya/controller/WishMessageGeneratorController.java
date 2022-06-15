@@ -2,7 +2,7 @@ package com.surya.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.surya.service.IWishMessageService;
@@ -32,15 +32,43 @@ public class WishMessageGeneratorController {
 	      
 		return new ModelAndView("display","wMsg",result);        // Here we can add only one Model Attribute
 	}    */
-	@RequestMapping("/wish")
-	public String generateMessage(ModelMap map) {
+	
+	/*@RequestMapping("/wish")
+	public String generateMessage(HashMap<String,Object> map) {
 		System.out.println("Shared Memory Class Name :: "+map.getClass());
 		// use service 
 		String result  = service.generateWishMessage();
-	    map.addAttribute("wMsg", result);
+	    map.put("wMsg", result);
+		// return LVN
+		return "display";
+	}*/
+	
+	/*@RequestMapping("/wish")
+	public String generateMessage(Map<String,Object> map) {
+		System.out.println("Shared Memory Class Name :: "+map.getClass());
+		// use service 
+		String result  = service.generateWishMessage();
+	    map.put("wMsg", result);
 		// return LVN
 		return "display";
 	}
+	*/
+	/*@RequestMapping("/wish")
+	public String generateMessage(Model model) {
+		System.out.println("Shared Memory Class Name :: "+model.getClass());
+		// use service 
+		String result  = service.generateWishMessage();
+	    model.addAttribute("wMsg", result);
+		// return LVN
+		return "display";
+	}*/
 	
+	/*@RequestMapping("/wish")
+	public void generateMessage(Model model) {
+		System.out.println("Shared Memory Class Name :: "+model.getClass());
+		// use service 
+		String result  = service.generateWishMessage();
+	    model.addAttribute("wMsg", result);
+	}*/
 	
 }
