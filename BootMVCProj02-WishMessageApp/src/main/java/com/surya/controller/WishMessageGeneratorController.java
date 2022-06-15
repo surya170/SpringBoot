@@ -1,8 +1,14 @@
 package com.surya.controller;
 
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.surya.service.IWishMessageService;
@@ -70,5 +76,47 @@ public class WishMessageGeneratorController {
 		String result  = service.generateWishMessage();
 	    model.addAttribute("wMsg", result);
 	}*/
+	/*@RequestMapping("/wish")
+	public Model generateMessage() {
+		// use service 
+		String result  = service.generateWishMessage();
+		// create model attributes 
+	    Model model = new ExtendedModelMap();
+	    model.addAttribute("wMsg", result);
+	    return model;
+	}
+	*/
+	
+	/*@RequestMapping("/wish")
+	public Map<String,Object> generateMessage() {
+		// use service 
+		String result  = service.generateWishMessage();
+		// create model attributes 
+	    Map<String,Object> map = new HashMap();
+	    map.put("wMsg",result);
+	    return map;
+	}
+	*/
+	/*@RequestMapping("/wish")
+	public void generateMessage(HttpServletResponse res) throws Exception {
+		// use service 
+		String result  = service.generateWishMessage();
+		 // getPrintWriter pointing to response object
+		PrintWriter pw = res.getWriter();
+		res.setContentType("text/html ");
+		pw.println("<b>Wish message is :: <b>"+result);
+		return;
+		
+	}*/
+	@RequestMapping("/wish")
+	public String generateMessage(HttpServletResponse res) throws Exception {
+		// use service 
+		String result  = service.generateWishMessage();
+		 // getPrintWriter pointing to response object
+		PrintWriter pw = res.getWriter();
+		res.setContentType("text/html ");
+		pw.println("<b>Wish message is :: <b>"+result);
+		return null;
+	}
 	
 }
